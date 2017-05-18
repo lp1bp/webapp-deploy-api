@@ -30,7 +30,7 @@ def build_project(branch_name):
     call(["gulp", "project"])
     chdir(pwd)
     return jsonify(message="Branch cloned",
-                   url="http://vm-crashtest.bepatient.mobi/bpapp/%s/bepatient-app/www-dev/" %branch)
+                   url="http://vm-crashtest.bepatient.mobi/bpapp/%s/bepatient-app/www-dev/" %branch_name)
 
 
 def delete_dir(branch_name):
