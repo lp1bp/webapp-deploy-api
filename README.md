@@ -23,7 +23,7 @@ Example :
 
 > $ deploy dev
 
-> { "message": "Branch cloned", "url": "http://vm-crashtest.bepatient.mobi/bpapp/<function branch at 0x7fe324aec7b8>/bepatient-app/www-dev/"}
+> { "message": "Branch cloned", "url": "http://vm-crashtest.bepatient.mobi/bpapp/dev/bepatient-app/www-dev/"}
 
 
 #### Delete
