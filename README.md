@@ -17,7 +17,7 @@
 
 #### Deploy
     
-> *alias deploy='function _deploy(){ curl -X PUT "http://vm-crashtest.bepatient.mobi:8000/$1" };_deploy'*
+> **alias deploy='function _deploy(){ curl -X PUT "http://vm-crashtest.bepatient.mobi:8000/$1" };_deploy'**
 
 Example :
 
@@ -28,7 +28,7 @@ Example :
 
 #### Delete
     
-> *alias delbranch='function _del(){ curl -X DELETE "http://vm-crashtest.bepatient.mobi:8000/$1" };_del'*
+> **alias delbranch='function _del(){ curl -X DELETE "http://vm-crashtest.bepatient.mobi:8000/$1" };_del'**
 
 Example :
 
@@ -38,7 +38,7 @@ Example :
 
 ### List
 
-> alias listbranch="curl 'http://vm-crashtest.bepatient.mobi:8000/'"
+> **alias listbranch="curl 'http://vm-crashtest.bepatient.mobi:8000/'"**
 
 Example :
 
