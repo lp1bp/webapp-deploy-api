@@ -14,7 +14,12 @@
         
         return {
             loadBranches: loadBranches,
-            deployBranch: deployBranch
+            deployBranch: deployBranch,
+            deleteBranch: deleteBranch
+        }
+        function deleteBranch(branch) {
+            return $http({url: apiURL + '/' + branch,
+                                  method: 'DELETE'});
         }
         function loadBranches() {
             return $http.get(apiURL + '/branch');
@@ -32,6 +37,7 @@
         var vm = this;        
         vm.name = "bepatientDeployController";
         vm.deployBranch = deployBranch;
+        vm.deleteBranch = deleteBranch;
 
         /////
         
@@ -48,6 +54,18 @@
                 });
         }
 
+        function deleteBranch(branch) {
+            vm.message = "Deleting branch " + branch + "...";
+            bepatientDeployService
+                .deleteBranch(branch)
+                .then(function(request) {
+                    vm.message = "Branch deleted"
+                })
+                .catch(function(error) {
+                    vm.message = "A server error occured, please check the name of the branch you are trying to clone";
+                });
+        }
+        
         function deployBranch(branch) {
             vm.message = "Deploying branch... This may take up to a few minutes"
             

@@ -14,7 +14,7 @@
       </div>
       <div class="appContent">
         <div class="appBranch" ng-repeat="(branch, url) in vm.branches">
-          <a href={{url}}>{{branch}}</a>
+          <a href={{url}}>{{branch}}</a>&nbsp;<i class="appDeleteButton" ng-click="vm.deleteBranch(branch)">x</i>
         </div>
         <span ng-if="!vm.branches || vm.branches.length === 0">No branch cloned, please use the form below to clone a new branch</span>
         <div class="cloneBranchForm">
