@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <script src="client/node_modules/angular/angular.min.js"></script>
+    <script src="client/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="client/app.css">
+    <title>Custom Bepatient Webapp</title>    
+  </head>
+  <body ng-app="bepatientDeploy">
+    <div class="appContainer" ng-controller="bepatientDeployController as vm">
+      <div class="appHeader">
+        <h3>
+          {{vm.message}}
+        </h3>
+      </div>
+      <div class="appContent">
+        <div class="appBranch" ng-repeat="(branch, url) in vm.branches">
+          <a href={{url}}>{{branch}}</a>
+        </div>
+        <span ng-if="!vm.branches || vm.branches.length === 0">No branch cloned, please use the form below to clone a new branch</span>
+        <div class="cloneBranchForm">
+          <label for="branchName">Branch name</label>
+          <input id="branchName" type="text" ng-model="vm.branchName"/><br/>
+          <button ng-click="vm.deployBranch(vm.branchName)">Deploy</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
