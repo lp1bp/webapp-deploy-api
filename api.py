@@ -9,7 +9,6 @@ host = "127.0.0.1"
 port = "8001"
 repo = "git@github.com:bepatient-fr/app-ionic.git"
 pwd = getcwd()
-print(pwd)
 
 app = Flask(__name__)
 
@@ -25,6 +24,7 @@ def build_project(branch_name):
     try:
         chdir("static/%s/bepatient-app/" %branch_name)
     except FileNotFoundError as e:
+        chdir(pwd)
         return jsonify(error="This branch doesn't seems to exist on this repository"), 404
     call(["npm", "install"])
     call(["gulp", "project"])
@@ -39,6 +39,7 @@ def delete_dir(branch_name):
     return jsonify(message='branch removed')
 
 def list_branches():
+    chdir(pwd)
     branches = {}
     for branch in listdir("static"):
         if branch != 'client':
