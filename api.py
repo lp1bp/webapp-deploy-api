@@ -3,10 +3,11 @@
 from flask import Flask, jsonify, send_from_directory, redirect
 from subprocess import call
 from os import chdir, path, getcwd, listdir
+from sys import argv
 from shutil import rmtree
 
 host = "127.0.0.1"
-port = "8001"
+port = argv[1] if len(argv) > 1 else "8001"
 repo = "git@github.com:bepatient-fr/app-ionic.git"
 pwd = getcwd()
 
