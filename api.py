@@ -17,6 +17,7 @@ def clone_branch(branch_name):
         call(["git", "clone", repo, "-b", branch_name, "static/%s" %branch_name])
     else:
         chdir("static/%s/bepatient-app/" %branch_name)
+        call(["git", "stash"])
         call(["git", "pull"])
     chdir(pwd)
 
