@@ -60,6 +60,7 @@
                 .deleteBranch(branch)
                 .then(function(request) {
                     vm.message = "Branch deleted"
+                    activate();
                 })
                 .catch(function(error) {
                     vm.message = "A server error occured, please check the name of the branch you are trying to clone";
